@@ -4,15 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embedded Engineer Portfolio & Resume</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Oswald:wght@700&display=swap');
         body { background-color: #111319; color: #e2e8f0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .font-hero { font-family: 'Oswald', sans-serif; }
-        .glass-card { background: #1a1d24; border: 1px solid #2d3342; }
+        .glass-card { background: #1a1d24; border: 1px solid #2d3342; transition: transform 0.3s ease, border-color 0.3s ease; }
+        
+        /* Hiệu ứng nổi lên khi di chuột */
+        .hover-lift:hover { transform: translateY(-8px); border-color: #4b5563; box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
+
+        /* Tùy chỉnh thanh cuộn cho ngầu hơn */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111319; }
+        ::-webkit-scrollbar-thumb { background: #374151; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4b5563; }
+
+        /* --- CSS CHO HIỆU ỨNG ĐỘNG (ANIMATIONS) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Độ trễ (delay) để các phần tử xuất hiện so le nhau */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased overflow-x-hidden">
 
     <!-- Navbar -->
     <nav class="flex justify-between items-center py-6 px-10 border-b border-gray-800 bg-[#111319]/90 sticky top-0 z-50 backdrop-blur-md">
@@ -23,12 +48,12 @@
             <a href="#capabilities" class="hover:text-white transition">Capabilities</a>
             <a href="#contact" class="hover:text-white transition">Contact</a>
         </div>
-        <a href="#contact" class="bg-gray-200 text-black px-5 py-2 rounded-full text-sm font-bold hover:bg-white transition">LET'S TALK ↗</a>
+        <a href="#contact" class="bg-gray-200 text-black px-5 py-2 rounded-full text-sm font-bold hover:bg-white hover:scale-105 transition transform duration-200">LET'S TALK ↗</a>
     </nav>
 
     <!-- Hero Section -->
     <header class="px-10 py-16 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-7">
+        <div class="lg:col-span-7 reveal active">
             <p class="text-gray-400 text-sm tracking-widest uppercase mb-4">Hardware & IoT Solutions</p>
             <h1 class="text-7xl lg:text-9xl font-hero text-white leading-none mb-6 uppercase">
                 Embedded<br>Engineer
@@ -37,27 +62,28 @@
                 Thiết kế phần cứng tối ưu, phát triển firmware nhúng và triển khai các hệ thống IoT công nghiệp kết hợp viễn thông và xử lý ảnh.
             </p>
             <div class="flex space-x-4">
-                <a href="#projects" class="bg-gray-200 text-black px-6 py-3 rounded-md font-bold hover:bg-white transition flex items-center">
+                <a href="#projects" class="bg-gray-200 text-black px-6 py-3 rounded-md font-bold hover:bg-white hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition flex items-center">
                     VIEW PROJECTS <span class="ml-2">↗</span>
                 </a>
-                <a href="#resume" class="border border-gray-700 text-white px-6 py-3 rounded-md font-bold hover:border-gray-500 transition flex items-center">
+                <a href="#resume" class="border border-gray-700 text-white px-6 py-3 rounded-md font-bold hover:border-gray-400 hover:bg-gray-800/50 transition flex items-center">
                     VIEW RESUME <span class="ml-2">↓</span>
                 </a>
             </div>
         </div>
         <!-- Vị trí ảnh của bạn -->
-        <div class="lg:col-span-5 h-[500px] w-full rounded-2xl overflow-hidden glass-card relative">
-            <img src="image_0994ab.jpg" alt="My Portrait" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+        <div class="lg:col-span-5 h-[500px] w-full rounded-2xl overflow-hidden glass-card relative reveal active delay-200">
+            <!-- Đổi tên file ảnh của bạn vào đây -->
+            <img src="image_0994ab.jpg" alt="My Portrait" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 hover:scale-105">
             <div class="absolute bottom-4 right-4 text-right">
-                <p class="text-xs text-gray-400 tracking-widest uppercase">Available for</p>
-                <p class="text-white font-bold tracking-wider">FREELANCE PROJECTS ↗</p>
+                <p class="text-xs text-gray-400 tracking-widest uppercase shadow-black drop-shadow-md">Available for</p>
+                <p class="text-white font-bold tracking-wider shadow-black drop-shadow-md">FREELANCE PROJECTS ↗</p>
             </div>
         </div>
     </header>
 
     <!-- Projects Section -->
     <section id="projects" class="px-10 py-16 border-t border-gray-800/50">
-        <div class="flex justify-between items-end mb-8">
+        <div class="flex justify-between items-end mb-8 reveal">
             <div>
                 <h2 class="text-sm text-gray-400 font-bold uppercase tracking-widest mb-1">Portfolio</h2>
                 <h3 class="text-4xl font-hero text-white uppercase">Featured Projects</h3>
@@ -66,10 +92,10 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- Project 1 -->
-            <div class="glass-card rounded-2xl p-6 group cursor-pointer hover:border-gray-500 transition">
+            <div class="glass-card hover-lift rounded-2xl p-6 group cursor-pointer reveal">
                 <div class="h-48 bg-gray-800 rounded-lg mb-6 overflow-hidden flex items-center justify-center relative">
                     <span class="text-gray-500 text-sm">[3D PCB Render]</span>
-                    <div class="absolute bottom-3 right-3 bg-black/50 p-2 rounded-full border border-gray-600 group-hover:bg-white group-hover:text-black transition">↗</div>
+                    <div class="absolute bottom-3 right-3 bg-black/50 p-2 rounded-full border border-gray-600 group-hover:bg-white group-hover:text-black transition transform group-hover:scale-110">↗</div>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-1">FMU_F7H7 Flight Controller</h3>
                 <p class="text-xs text-gray-400 uppercase tracking-wider mb-4">Hardware Design / PCB</p>
@@ -78,11 +104,11 @@
                     <span class="bg-gray-800 text-xs px-2 py-1 rounded">ArduPilot</span>
                 </div>
             </div>
-            <!-- Project 2 -->
-            <div class="glass-card rounded-2xl p-6 group cursor-pointer hover:border-gray-500 transition">
+            <!-- Project 2 (Trễ 100ms) -->
+            <div class="glass-card hover-lift rounded-2xl p-6 group cursor-pointer reveal delay-100">
                 <div class="h-48 bg-gray-800 rounded-lg mb-6 overflow-hidden flex items-center justify-center relative">
                     <span class="text-gray-500 text-sm">[Conveyor System Image]</span>
-                    <div class="absolute bottom-3 right-3 bg-black/50 p-2 rounded-full border border-gray-600 group-hover:bg-white group-hover:text-black transition">↗</div>
+                    <div class="absolute bottom-3 right-3 bg-black/50 p-2 rounded-full border border-gray-600 group-hover:bg-white group-hover:text-black transition transform group-hover:scale-110">↗</div>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-1">Hệ Thống Phân Loại Màu</h3>
                 <p class="text-xs text-gray-400 uppercase tracking-wider mb-4">Computer Vision / UART</p>
@@ -91,11 +117,11 @@
                     <span class="bg-gray-800 text-xs px-2 py-1 rounded">Python</span>
                 </div>
             </div>
-            <!-- Project 3 -->
-            <div class="glass-card rounded-2xl p-6 group cursor-pointer hover:border-gray-500 transition">
+            <!-- Project 3 (Trễ 200ms) -->
+            <div class="glass-card hover-lift rounded-2xl p-6 group cursor-pointer reveal delay-200">
                 <div class="h-48 bg-gray-800 rounded-lg mb-6 overflow-hidden flex items-center justify-center relative">
                     <span class="text-gray-500 text-sm">[RTK Base Station Image]</span>
-                    <div class="absolute bottom-3 right-3 bg-black/50 p-2 rounded-full border border-gray-600 group-hover:bg-white group-hover:text-black transition">↗</div>
+                    <div class="absolute bottom-3 right-3 bg-black/50 p-2 rounded-full border border-gray-600 group-hover:bg-white group-hover:text-black transition transform group-hover:scale-110">↗</div>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-1">RTK GNSS LoRa Base</h3>
                 <p class="text-xs text-gray-400 uppercase tracking-wider mb-4">IoT Gateway / LoRaWAN</p>
@@ -107,15 +133,14 @@
         </div>
     </section>
 
-    <!-- RESUME SECTION (NEW) -->
+    <!-- RESUME SECTION -->
     <section id="resume" class="px-10 py-16 bg-[#151820]">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 border-b border-gray-800 pb-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 border-b border-gray-800 pb-6 reveal">
             <div>
                 <h2 class="text-sm text-gray-400 font-bold uppercase tracking-widest mb-1">Curriculum Vitae</h2>
                 <h3 class="text-4xl font-hero text-white uppercase">Experience & Education</h3>
             </div>
-            <!-- Nút tải PDF CV -->
-            <a href="duong-link-file-cv-cua-ban.pdf" target="_blank" class="mt-4 md:mt-0 border border-gray-600 text-white px-6 py-3 rounded-md font-bold hover:bg-white hover:text-black transition flex items-center text-sm">
+            <a href="duong-link-file-cv-cua-ban.pdf" target="_blank" class="mt-4 md:mt-0 border border-gray-600 text-white px-6 py-3 rounded-md font-bold hover:bg-white hover:text-black hover:-translate-y-1 transition flex items-center text-sm shadow-lg">
                 DOWNLOAD PDF RESUME <span class="ml-2">↓</span>
             </a>
         </div>
@@ -123,33 +148,33 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <!-- Work Experience -->
             <div>
-                <h4 class="text-white font-bold mb-6 text-xl tracking-wider uppercase border-l-4 border-white pl-3">Work Experience</h4>
+                <h4 class="text-white font-bold mb-6 text-xl tracking-wider uppercase border-l-4 border-white pl-3 reveal">Work Experience</h4>
                 <div class="space-y-6">
-                    <div class="glass-card p-6 rounded-xl hover:border-gray-500 transition">
+                    <div class="glass-card hover-lift p-6 rounded-xl reveal delay-100">
                         <div class="flex justify-between items-start mb-2">
                             <h5 class="text-lg font-bold text-white">Freelance Embedded Engineer</h5>
                             <span class="text-xs text-gray-400 font-mono bg-gray-800 px-2 py-1 rounded">2024 - Present</span>
                         </div>
                         <div class="text-sm text-gray-400 mb-3 uppercase tracking-widest">Self-Employed</div>
-                        <p class="text-sm text-gray-500 leading-relaxed">Nhận thiết kế phần cứng PCB lên đến 6 lớp (chuẩn JLCPCB), config firmware ArduPilot cho các hệ thống UAV chuyên dụng và tích hợp module định vị RTK.</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Nhận thiết kế phần cứng PCB lên đến 6 lớp (chuẩn JLCPCB), config firmware ArduPilot cho UAV chuyên dụng và tích hợp định vị RTK.</p>
                     </div>
 
-                    <div class="glass-card p-6 rounded-xl hover:border-gray-500 transition">
+                    <div class="glass-card hover-lift p-6 rounded-xl reveal delay-200">
                         <div class="flex justify-between items-start mb-2">
                             <h5 class="text-lg font-bold text-white">IoT Systems Developer</h5>
                             <span class="text-xs text-gray-400 font-mono bg-gray-800 px-2 py-1 rounded">2022 - 2024</span>
                         </div>
                         <div class="text-sm text-gray-400 mb-3 uppercase tracking-widest">Tech Company Name</div>
-                        <p class="text-sm text-gray-500 leading-relaxed">Lập trình Python xử lý ảnh nhúng trên module MaixCAM, thiết lập và quản lý các node mạng LoRaWAN qua Gateway Raspberry Pi CM5.</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Lập trình Python xử lý ảnh trên MaixCAM, quản lý node mạng LoRaWAN qua Gateway Raspberry Pi CM5.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Education & Certifications -->
             <div>
-                <h4 class="text-white font-bold mb-6 text-xl tracking-wider uppercase border-l-4 border-gray-600 pl-3">Education</h4>
+                <h4 class="text-white font-bold mb-6 text-xl tracking-wider uppercase border-l-4 border-gray-600 pl-3 reveal delay-100">Education</h4>
                 <div class="space-y-6">
-                    <div class="glass-card p-6 rounded-xl hover:border-gray-500 transition">
+                    <div class="glass-card hover-lift p-6 rounded-xl reveal delay-200">
                         <div class="flex justify-between items-start mb-2">
                             <h5 class="text-lg font-bold text-white">Kỹ sư Điện tử - Viễn thông</h5>
                             <span class="text-xs text-gray-400 font-mono bg-gray-800 px-2 py-1 rounded">2018 - 2022</span>
@@ -157,7 +182,7 @@
                         <div class="text-sm text-gray-400 uppercase tracking-widest">Tên Trường Đại Học Của Bạn</div>
                     </div>
 
-                    <div class="glass-card p-6 rounded-xl hover:border-gray-500 transition">
+                    <div class="glass-card hover-lift p-6 rounded-xl reveal delay-300">
                         <div class="flex justify-between items-start mb-2">
                             <h5 class="text-lg font-bold text-white">Chứng chỉ PCB Design Nâng Cao</h5>
                             <span class="text-xs text-gray-400 font-mono bg-gray-800 px-2 py-1 rounded">2023</span>
@@ -171,20 +196,20 @@
 
     <!-- Capabilities & Tools -->
     <section id="capabilities" class="px-10 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-gray-800/50">
-        <div>
+        <div class="reveal">
             <h2 class="text-sm text-gray-400 font-bold uppercase tracking-widest mb-6">Core Capabilities</h2>
             <div class="grid grid-cols-2 gap-6">
                 <div>
                     <h4 class="text-white font-bold mb-2">Hardware Design</h4>
-                    <p class="text-sm text-gray-500">Thiết kế nguyên lý và layout PCB nhiều lớp, tính toán trở kháng vi sai.</p>
+                    <p class="text-sm text-gray-500">Thiết kế nguyên lý và layout PCB, tính toán trở kháng vi sai.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-2">Firmware Dev</h4>
-                    <p class="text-sm text-gray-500">Lập trình điều khiển thiết bị nhúng qua các chuẩn I2C, SPI, UART.</p>
+                    <p class="text-sm text-gray-500">Lập trình thiết bị nhúng qua các chuẩn I2C, SPI, UART.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-2">IoT Networks</h4>
-                    <p class="text-sm text-gray-500">Triển khai hạ tầng mạng viễn thông LoRaWAN, thiết lập Gateway.</p>
+                    <p class="text-sm text-gray-500">Triển khai hạ tầng mạng viễn thông LoRaWAN, Gateway.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-2">Computer Vision</h4>
@@ -193,30 +218,30 @@
             </div>
         </div>
         
-        <div>
+        <div class="reveal delay-200">
             <h2 class="text-sm text-gray-400 font-bold uppercase tracking-widest mb-6">Tools & Technologies</h2>
-            <div class="glass-card rounded-2xl p-6">
+            <div class="glass-card hover-lift rounded-2xl p-6">
                 <div class="grid grid-cols-3 gap-y-6 text-white text-sm font-semibold">
-                    <div class="flex items-center gap-2"><span class="text-gray-500">◆</span> Altium</div>
-                    <div class="flex items-center gap-2"><span class="text-gray-500">◆</span> Python</div>
-                    <div class="flex items-center gap-2"><span class="text-gray-500">◆</span> C / C++</div>
-                    <div class="flex items-center gap-2"><span class="text-gray-500">◆</span> ArduPilot</div>
-                    <div class="flex items-center gap-2"><span class="text-gray-500">◆</span> Home Assistant</div>
-                    <div class="flex items-center gap-2"><span class="text-gray-500">◆</span> ChirpStack</div>
+                    <div class="flex items-center gap-2 hover:text-blue-400 transition cursor-default"><span class="text-gray-500">◆</span> Altium</div>
+                    <div class="flex items-center gap-2 hover:text-yellow-400 transition cursor-default"><span class="text-gray-500">◆</span> Python</div>
+                    <div class="flex items-center gap-2 hover:text-blue-500 transition cursor-default"><span class="text-gray-500">◆</span> C / C++</div>
+                    <div class="flex items-center gap-2 hover:text-gray-300 transition cursor-default"><span class="text-gray-500">◆</span> ArduPilot</div>
+                    <div class="flex items-center gap-2 hover:text-blue-400 transition cursor-default"><span class="text-gray-500">◆</span> Home Assistant</div>
+                    <div class="flex items-center gap-2 hover:text-red-400 transition cursor-default"><span class="text-gray-500">◆</span> ChirpStack</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer CTA -->
-    <footer id="contact" class="px-10 py-16 mt-10">
+    <footer id="contact" class="px-10 py-16 mt-10 reveal">
         <div class="glass-card rounded-2xl p-10 flex flex-col md:flex-row justify-between items-center bg-gradient-to-r from-[#1a1d24] to-[#2a2f3a]">
             <div>
                 <h2 class="text-4xl lg:text-5xl font-hero text-white mb-2 uppercase">Let's Create<br>Something Innovative</h2>
                 <p class="text-gray-400 text-sm">Hiện đang nhận dự án freelance thiết kế phần cứng và nhúng.</p>
             </div>
             <div class="mt-8 md:mt-0 flex flex-col gap-4">
-                <a href="mailto:hello@yourname.com" class="bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-200 transition text-center">
+                <a href="mailto:hello@yourname.com" class="bg-white text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition transform text-center shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]">
                     LET'S WORK TOGETHER ↗
                 </a>
                 <div class="text-gray-400 text-sm text-right">
@@ -230,5 +255,33 @@
         </div>
     </footer>
 
+    <!-- --- JAVASCRIPT XỬ LÝ ANIMATION KHI CUỘN TRANG --- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Khai báo công cụ theo dõi việc cuộn trang (Intersection Observer)
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Kích hoạt khi 10% phần tử xuất hiện trên màn hình
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Thêm class 'active' để chạy hiệu ứng CSS
+                        entry.target.classList.add('active');
+                        // Ngừng theo dõi sau khi đã xuất hiện để tiết kiệm tài nguyên
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Tìm tất cả các phần tử có class 'reveal' và gắn bộ theo dõi vào
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
