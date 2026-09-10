@@ -1,11 +1,101 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <title>Trang CV của tôi</title>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Kỹ sư Hệ thống nhúng</title>
+    <!-- Nhúng thư viện Tailwind CSS trực tiếp -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Hiệu ứng cuộn trang mượt mà */
+        html { scroll-behavior: smooth; }
+    </style>
 </head>
-<body style="text-align: center; margin-top: 20%;">
-    <h1>Xin chào, Website đang trong quá trình xây dựng! 🚀</h1>
-    <p>Tôi sẽ cập nhật các dự án và CV của mình tại đây sớm thôi.</p>
+<body class="bg-gray-50 text-gray-800 font-sans leading-normal tracking-normal">
+
+    <!-- Thanh Điều Hướng (Navigation) -->
+    <nav class="w-full z-10 top-0 bg-white border-b border-gray-200 sticky">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4 px-6">
+            <div class="text-xl font-bold text-gray-800">Kỹ Sư Phần Cứng</div>
+            <div class="flex items-center">
+                <a class="inline-block text-gray-600 no-underline hover:text-blue-500 py-2 px-4" href="#about">Giới thiệu</a>
+                <a class="inline-block text-gray-600 no-underline hover:text-blue-500 py-2 px-4" href="#projects">Dự án</a>
+                <a class="inline-block text-gray-600 no-underline hover:text-blue-500 py-2 px-4" href="#contact">Liên hệ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Phần Giới Thiệu (Hero Section) -->
+    <section id="about" class="container mx-auto px-6 py-20 text-center">
+        <h1 class="text-5xl font-bold mb-4 text-gray-900">Kỹ sư Hệ thống Nhúng & IoT</h1>
+        <p class="text-xl mb-8 text-gray-600 max-w-2xl mx-auto">Chuyên thiết kế phần cứng, lập trình vi điều khiển và phát triển các hệ thống nhúng tự động hóa.</p>
+        <a href="#projects" class="bg-blue-600 text-white font-bold rounded-lg py-3 px-8 shadow-lg hover:bg-blue-700 transition duration-300">Xem Dự án Thực tế</a>
+    </section>
+
+    <!-- Phần Trưng Bày Dự Án (Projects Section) -->
+    <section id="projects" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Các Dự Án Tiêu Biểu</h2>
+            <!-- Lưới hiển thị 3 dự án -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Dự án 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-blue-100 h-48 flex items-center justify-center">
+                        <span class="text-blue-500 font-bold text-lg">[Chèn Ảnh Board Mạch Altium 3D]</span>
+                        <!-- Sau này bạn dùng thẻ <img src="duong-link-anh.jpg" class="w-full h-full object-cover"> để thay thế thẻ span trên -->
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Mạch Điều Khiển Bay 6 Lớp</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Thiết kế PCB 6 lớp trên Altium Designer theo chuẩn JLCPCB, tối ưu cho firmware ArduPilot và tích hợp cảm biến đo khoảng cách ToF.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700">Altium Designer</span>
+                            <span class="bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700">ArduPilot</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dự án 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-green-100 h-48 flex items-center justify-center">
+                        <span class="text-green-500 font-bold text-lg">[Chèn Ảnh Băng Tải / MaixCAM]</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Hệ Thống Phân Loại Màu Sản Phẩm</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Ứng dụng xử lý ảnh trên bo mạch vi điều khiển, nhận diện màu sắc bằng Python và xuất thống kê đếm sản phẩm qua giao tiếp UART.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700">Python</span>
+                            <span class="bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700">Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dự án 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-purple-100 h-48 flex items-center justify-center">
+                        <span class="text-purple-500 font-bold text-lg">[Chèn Ảnh Module RTK / LoRa]</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Hệ Thống Định Vị RTK qua LoRa</h3>
+                        <p class="text-gray-600 mb-4 text-sm">Thiết lập trạm gốc truyền dữ liệu hiệu chỉnh vị trí qua module viễn thông LoRa đến trạm động, đáp ứng độ chính xác cao.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700">LoRaWAN</span>
+                            <span class="bg-gray-200 rounded-full px-3 py-1 text-xs font-semibold text-gray-700">RTK GNSS</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Chân Trang (Footer / Contact) -->
+    <footer id="contact" class="bg-gray-800 text-white py-10 text-center">
+        <h3 class="text-2xl font-bold mb-4">Sẵn sàng hợp tác</h3>
+        <p class="mb-6 text-gray-400">Bạn có ý tưởng dự án hoặc cần thiết kế hệ thống? Hãy liên hệ với tôi.</p>
+        <a href="mailto:email-cua-ban@example.com" class="inline-block border-2 border-blue-500 text-blue-400 font-bold rounded-lg py-2 px-6 hover:bg-blue-500 hover:text-white transition duration-300">Gửi Email cho tôi</a>
+        <p class="mt-8 text-sm text-gray-500">© 2026 Bản quyền thuộc về [Tên Của Bạn].</p>
+    </footer>
+
 </body>
 </html>
