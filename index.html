@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded Engineer Portfolio</title>
+    <title>Embedded Engineer Portfolio & Resume</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Oswald:wght@700&display=swap');
-        body { background-color: #111319; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        body { background-color: #111319; color: #e2e8f0; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .font-hero { font-family: 'Oswald', sans-serif; }
         .glass-card { background: #1a1d24; border: 1px solid #2d3342; }
     </style>
@@ -15,10 +15,11 @@
 <body class="antialiased">
 
     <!-- Navbar -->
-    <nav class="flex justify-between items-center py-6 px-10 border-b border-gray-800">
+    <nav class="flex justify-between items-center py-6 px-10 border-b border-gray-800 bg-[#111319]/90 sticky top-0 z-50 backdrop-blur-md">
         <div class="text-2xl font-hero tracking-widest text-white">EE.</div>
         <div class="hidden md:flex space-x-8 text-sm text-gray-400 font-semibold uppercase tracking-wider">
-            <a href="#work" class="hover:text-white transition">Work</a>
+            <a href="#projects" class="hover:text-white transition">Projects</a>
+            <a href="#resume" class="hover:text-white transition">Resume</a>
             <a href="#capabilities" class="hover:text-white transition">Capabilities</a>
             <a href="#contact" class="hover:text-white transition">Contact</a>
         </div>
@@ -36,17 +37,16 @@
                 Thiết kế phần cứng tối ưu, phát triển firmware nhúng và triển khai các hệ thống IoT công nghiệp kết hợp viễn thông và xử lý ảnh.
             </p>
             <div class="flex space-x-4">
-                <a href="#work" class="bg-gray-200 text-black px-6 py-3 rounded-md font-bold hover:bg-white transition flex items-center">
-                    VIEW MY WORK <span class="ml-2">↗</span>
+                <a href="#projects" class="bg-gray-200 text-black px-6 py-3 rounded-md font-bold hover:bg-white transition flex items-center">
+                    VIEW PROJECTS <span class="ml-2">↗</span>
                 </a>
-                <a href="#" class="border border-gray-700 text-white px-6 py-3 rounded-md font-bold hover:border-gray-500 transition flex items-center">
-                    DOWNLOAD RESUME <span class="ml-2">↓</span>
+                <a href="#resume" class="border border-gray-700 text-white px-6 py-3 rounded-md font-bold hover:border-gray-500 transition flex items-center">
+                    VIEW RESUME <span class="ml-2">↓</span>
                 </a>
             </div>
         </div>
         <!-- Vị trí ảnh của bạn -->
         <div class="lg:col-span-5 h-[500px] w-full rounded-2xl overflow-hidden glass-card relative">
-            <!-- Đổi tên file ảnh của bạn vào thuộc tính src dưới đây -->
             <img src="image_0994ab.jpg" alt="My Portrait" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
             <div class="absolute bottom-4 right-4 text-right">
                 <p class="text-xs text-gray-400 tracking-widest uppercase">Available for</p>
@@ -55,36 +55,16 @@
         </div>
     </header>
 
-    <!-- Stats Section -->
-    <section class="px-10 pb-16">
-        <div class="glass-card rounded-2xl py-10 grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-700 text-center">
-            <div>
-                <h3 class="text-4xl font-bold text-white mb-2">6</h3>
-                <p class="text-xs text-gray-400 uppercase tracking-widest">Layers PCB Max</p>
-            </div>
-            <div>
-                <h3 class="text-4xl font-bold text-white mb-2">15+</h3>
-                <p class="text-xs text-gray-400 uppercase tracking-widest">Projects Completed</p>
-            </div>
-            <div>
-                <h3 class="text-4xl font-bold text-white mb-2">99%</h3>
-                <p class="text-xs text-gray-400 uppercase tracking-widest">System Uptime</p>
-            </div>
-            <div>
-                <h3 class="text-4xl font-bold text-white mb-2">100%</h3>
-                <p class="text-xs text-gray-400 uppercase tracking-widest">Open Source Focus</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Work -->
-    <section id="work" class="px-10 py-10">
+    <!-- Projects Section -->
+    <section id="projects" class="px-10 py-16 border-t border-gray-800/50">
         <div class="flex justify-between items-end mb-8">
-            <h2 class="text-sm text-gray-400 font-bold uppercase tracking-widest">Featured Work</h2>
-            <a href="#" class="text-sm text-gray-400 hover:text-white transition">EXPLORE ALL PROJECTS ↗</a>
+            <div>
+                <h2 class="text-sm text-gray-400 font-bold uppercase tracking-widest mb-1">Portfolio</h2>
+                <h3 class="text-4xl font-hero text-white uppercase">Featured Projects</h3>
+            </div>
+            <a href="https://github.com/your-github" target="_blank" class="text-sm text-gray-400 hover:text-white transition">EXPLORE GITHUB ↗</a>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
             <!-- Project 1 -->
             <div class="glass-card rounded-2xl p-6 group cursor-pointer hover:border-gray-500 transition">
                 <div class="h-48 bg-gray-800 rounded-lg mb-6 overflow-hidden flex items-center justify-center relative">
@@ -98,7 +78,6 @@
                     <span class="bg-gray-800 text-xs px-2 py-1 rounded">ArduPilot</span>
                 </div>
             </div>
-
             <!-- Project 2 -->
             <div class="glass-card rounded-2xl p-6 group cursor-pointer hover:border-gray-500 transition">
                 <div class="h-48 bg-gray-800 rounded-lg mb-6 overflow-hidden flex items-center justify-center relative">
@@ -112,7 +91,6 @@
                     <span class="bg-gray-800 text-xs px-2 py-1 rounded">Python</span>
                 </div>
             </div>
-
             <!-- Project 3 -->
             <div class="glass-card rounded-2xl p-6 group cursor-pointer hover:border-gray-500 transition">
                 <div class="h-48 bg-gray-800 rounded-lg mb-6 overflow-hidden flex items-center justify-center relative">
@@ -123,44 +101,103 @@
                 <p class="text-xs text-gray-400 uppercase tracking-wider mb-4">IoT Gateway / LoRaWAN</p>
                 <div class="flex gap-2">
                     <span class="bg-gray-800 text-xs px-2 py-1 rounded">ZED-F9P</span>
-                    <span class="bg-gray-800 text-xs px-2 py-1 rounded">CM5 + RAK5146</span>
+                    <span class="bg-gray-800 text-xs px-2 py-1 rounded">LoRa</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESUME SECTION (NEW) -->
+    <section id="resume" class="px-10 py-16 bg-[#151820]">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 border-b border-gray-800 pb-6">
+            <div>
+                <h2 class="text-sm text-gray-400 font-bold uppercase tracking-widest mb-1">Curriculum Vitae</h2>
+                <h3 class="text-4xl font-hero text-white uppercase">Experience & Education</h3>
+            </div>
+            <!-- Nút tải PDF CV -->
+            <a href="duong-link-file-cv-cua-ban.pdf" target="_blank" class="mt-4 md:mt-0 border border-gray-600 text-white px-6 py-3 rounded-md font-bold hover:bg-white hover:text-black transition flex items-center text-sm">
+                DOWNLOAD PDF RESUME <span class="ml-2">↓</span>
+            </a>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Work Experience -->
+            <div>
+                <h4 class="text-white font-bold mb-6 text-xl tracking-wider uppercase border-l-4 border-white pl-3">Work Experience</h4>
+                <div class="space-y-6">
+                    <div class="glass-card p-6 rounded-xl hover:border-gray-500 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h5 class="text-lg font-bold text-white">Freelance Embedded Engineer</h5>
+                            <span class="text-xs text-gray-400 font-mono bg-gray-800 px-2 py-1 rounded">2024 - Present</span>
+                        </div>
+                        <div class="text-sm text-gray-400 mb-3 uppercase tracking-widest">Self-Employed</div>
+                        <p class="text-sm text-gray-500 leading-relaxed">Nhận thiết kế phần cứng PCB lên đến 6 lớp (chuẩn JLCPCB), config firmware ArduPilot cho các hệ thống UAV chuyên dụng và tích hợp module định vị RTK.</p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl hover:border-gray-500 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h5 class="text-lg font-bold text-white">IoT Systems Developer</h5>
+                            <span class="text-xs text-gray-400 font-mono bg-gray-800 px-2 py-1 rounded">2022 - 2024</span>
+                        </div>
+                        <div class="text-sm text-gray-400 mb-3 uppercase tracking-widest">Tech Company Name</div>
+                        <p class="text-sm text-gray-500 leading-relaxed">Lập trình Python xử lý ảnh nhúng trên module MaixCAM, thiết lập và quản lý các node mạng LoRaWAN qua Gateway Raspberry Pi CM5.</p>
+                    </div>
                 </div>
             </div>
 
+            <!-- Education & Certifications -->
+            <div>
+                <h4 class="text-white font-bold mb-6 text-xl tracking-wider uppercase border-l-4 border-gray-600 pl-3">Education</h4>
+                <div class="space-y-6">
+                    <div class="glass-card p-6 rounded-xl hover:border-gray-500 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h5 class="text-lg font-bold text-white">Kỹ sư Điện tử - Viễn thông</h5>
+                            <span class="text-xs text-gray-400 font-mono bg-gray-800 px-2 py-1 rounded">2018 - 2022</span>
+                        </div>
+                        <div class="text-sm text-gray-400 uppercase tracking-widest">Tên Trường Đại Học Của Bạn</div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl hover:border-gray-500 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h5 class="text-lg font-bold text-white">Chứng chỉ PCB Design Nâng Cao</h5>
+                            <span class="text-xs text-gray-400 font-mono bg-gray-800 px-2 py-1 rounded">2023</span>
+                        </div>
+                        <div class="text-sm text-gray-400 uppercase tracking-widest">Altium Academy / Khóa học online</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Capabilities & Tools -->
-    <section id="capabilities" class="px-10 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
-        <!-- Capabilities -->
+    <section id="capabilities" class="px-10 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 border-t border-gray-800/50">
         <div>
             <h2 class="text-sm text-gray-400 font-bold uppercase tracking-widest mb-6">Core Capabilities</h2>
             <div class="grid grid-cols-2 gap-6">
                 <div>
                     <h4 class="text-white font-bold mb-2">Hardware Design</h4>
-                    <p class="text-sm text-gray-500">Thiết kế nguyên lý và layout PCB nhiều lớp, tối ưu nhiễu tín hiệu.</p>
+                    <p class="text-sm text-gray-500">Thiết kế nguyên lý và layout PCB nhiều lớp, tính toán trở kháng vi sai.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-2">Firmware Dev</h4>
-                    <p class="text-sm text-gray-500">Lập trình điều khiển thiết bị, tích hợp cảm biến qua I2C, SPI, UART.</p>
+                    <p class="text-sm text-gray-500">Lập trình điều khiển thiết bị nhúng qua các chuẩn I2C, SPI, UART.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-2">IoT Networks</h4>
-                    <p class="text-sm text-gray-500">Triển khai hạ tầng mạng LoRaWAN, thiết lập Gateway nội bộ.</p>
+                    <p class="text-sm text-gray-500">Triển khai hạ tầng mạng viễn thông LoRaWAN, thiết lập Gateway.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-2">Computer Vision</h4>
-                    <p class="text-sm text-gray-500">Xử lý ảnh nhúng trên các module camera AI để nhận diện đối tượng.</p>
+                    <p class="text-sm text-gray-500">Xử lý ảnh nhúng AI nhận diện đối tượng bằng Python.</p>
                 </div>
             </div>
         </div>
         
-        <!-- Tools -->
         <div>
             <h2 class="text-sm text-gray-400 font-bold uppercase tracking-widest mb-6">Tools & Technologies</h2>
             <div class="glass-card rounded-2xl p-6">
                 <div class="grid grid-cols-3 gap-y-6 text-white text-sm font-semibold">
-                    <div class="flex items-center gap-2"><span class="text-gray-500">◆</span> Altium Designer</div>
+                    <div class="flex items-center gap-2"><span class="text-gray-500">◆</span> Altium</div>
                     <div class="flex items-center gap-2"><span class="text-gray-500">◆</span> Python</div>
                     <div class="flex items-center gap-2"><span class="text-gray-500">◆</span> C / C++</div>
                     <div class="flex items-center gap-2"><span class="text-gray-500">◆</span> ArduPilot</div>
@@ -176,7 +213,7 @@
         <div class="glass-card rounded-2xl p-10 flex flex-col md:flex-row justify-between items-center bg-gradient-to-r from-[#1a1d24] to-[#2a2f3a]">
             <div>
                 <h2 class="text-4xl lg:text-5xl font-hero text-white mb-2 uppercase">Let's Create<br>Something Innovative</h2>
-                <p class="text-gray-400 text-sm">Hiện đang nhận thiết kế PCB và tích hợp hệ thống nhúng.</p>
+                <p class="text-gray-400 text-sm">Hiện đang nhận dự án freelance thiết kế phần cứng và nhúng.</p>
             </div>
             <div class="mt-8 md:mt-0 flex flex-col gap-4">
                 <a href="mailto:hello@yourname.com" class="bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-200 transition text-center">
