@@ -1,0 +1,1 @@
+Optional: place real project screenshots here and update paths in projects.html.

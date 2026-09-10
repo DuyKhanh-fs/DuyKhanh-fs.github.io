@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Projects — Embedded Systems & IoT Engineer</title>
+  <meta name="description" content="Detailed embedded systems, PCB, computer vision, LoRaWAN and RTK-GNSS projects.">
+  <meta name="theme-color" content="#17191f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">DEV<span>EMBEDDED / IOT</span></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="projects.html" data-nav="projects">Projects</a>
+        <a href="resume.html" data-nav="resume">Resume</a>
+        <a href="index.html#capabilities">Capabilities</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-cta-wrap"><a class="pill-btn" href="index.html#contact">Let's talk <span>↗</span></a></div>
+      <button class="mobile-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="resume.html">Resume</a>
+      <a href="index.html#capabilities">Capabilities</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div>
+        <p class="eyebrow">Selected Engineering Work</p>
+        <h1 class="display">Projects</h1>
+      </div>
+      <p class="page-hero-copy">
+        Detailed project case studies. The home page shows only selected highlights;
+        this page is the main archive for products, prototypes and engineering systems.
+      </p>
+    </div>
+  </section>
+
+  <section class="container project-detail-list">
+    <article class="project-detail panel reveal" id="fmu">
+      <div class="project-visual"><span class="project-index">01 / HARDWARE & UAV</span></div>
+      <div class="project-detail-content">
+        <span class="section-kicker">Flight Control Hardware</span>
+        <h2>FMU_F7H7 Flight Controller</h2>
+        <p class="description">
+          Designed the schematic and 6-layer PCB layout in Altium Designer for a UAV flight-control board.
+          The system uses a Kakute H7-class controller configured with ArduPilot firmware and integrates
+          a Time-of-Flight sensor to support stable low-altitude flight behavior.
+        </p>
+        <div class="project-meta-grid">
+          <div class="meta"><span class="label">Tools</span><strong>Altium Designer · ArduPilot</strong></div>
+          <div class="meta"><span class="label">Hardware</span><strong>Kakute H7 · ToF sensor</strong></div>
+          <div class="meta"><span class="label">Focus</span><strong>6-layer PCB · UAV control</strong></div>
+        </div>
+        <div class="project-actions">
+          <a class="outline-btn" href="#" target="_blank">Source code / docs ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-detail panel reveal" id="vision">
+      <div class="project-visual"><span class="project-index">02 / COMPUTER VISION</span></div>
+      <div class="project-detail-content">
+        <span class="section-kicker">Industrial Vision Prototype</span>
+        <h2>Color Sorting System</h2>
+        <p class="description">
+          Built a computer-vision solution for product color classification on a conveyor using
+          Sipeed MaixCAM Elite and Python-based Maix libraries. The system detects RGB color ranges,
+          can auto-start the vision script, and sends counting data to the controller over UART.
+        </p>
+        <div class="project-meta-grid">
+          <div class="meta"><span class="label">Software</span><strong>Python · Maix</strong></div>
+          <div class="meta"><span class="label">Hardware</span><strong>Sipeed MaixCAM Elite</strong></div>
+          <div class="meta"><span class="label">Interface</span><strong>UART · RGB classification</strong></div>
+        </div>
+        <div class="project-actions">
+          <a class="outline-btn" href="#" target="_blank">Source code / docs ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-detail panel reveal" id="rtk">
+      <div class="project-visual"><span class="project-index">03 / IOT & POSITIONING</span></div>
+      <div class="project-detail-content">
+        <span class="section-kicker">Connected Positioning System</span>
+        <h2>RTK-GNSS LoRa Base</h2>
+        <p class="description">
+          Deployed a wide-area sensing architecture combining high-precision RTK-GNSS positioning
+          with LoRa communications. A u-blox ZED-F9P base station provides correction data to rover
+          nodes, while the LoRaWAN gateway uses Raspberry Pi Compute Module 5 with RAK5146 and
+          is managed through The Things Network.
+        </p>
+        <div class="project-meta-grid">
+          <div class="meta"><span class="label">GNSS</span><strong>u-blox ZED-F9P · UM960</strong></div>
+          <div class="meta"><span class="label">Gateway</span><strong>Raspberry Pi CM5 · RAK5146</strong></div>
+          <div class="meta"><span class="label">Network</span><strong>LoRaWAN · The Things Network</strong></div>
+        </div>
+        <div class="project-actions">
+          <a class="outline-btn" href="#" target="_blank">Source code / docs ↗</a>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer class="container">
+  <span>© 2026 Embedded Systems & IoT Engineer</span>
+  <div class="footer-links">
+    <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>document.querySelector('[data-nav="projects"]')?.classList.add('active');</script>
+</body></html>
